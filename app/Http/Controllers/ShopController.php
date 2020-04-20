@@ -16,7 +16,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $pagination = 9;
+        $pagination = 8;
         $categories = Category::all();
 
         if (request()->category) {
@@ -54,7 +54,7 @@ class ShopController extends Controller
     {
         $product = Product::where('slug', $slug)->firstOrFail();
         $mightAlsoLike = Product::where('slug', '!=', $slug)->mightAlsoLike()->get();
-        
+        $products_sa = DB::table('products')->orderBy('id','DESC')->paginate(4);
         
 
         $stockLevel = getStockLevel($product->quantity);
@@ -63,7 +63,7 @@ class ShopController extends Controller
             'product' => $product,
             'stockLevel' => $stockLevel,
             'mightAlsoLike' => $mightAlsoLike,
-            
+            'products_sa' => $products_sa,
             
         ]);
     }

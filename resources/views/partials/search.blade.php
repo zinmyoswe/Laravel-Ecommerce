@@ -6,7 +6,9 @@
     </svg>
 </div>
 
-<form action="{{ route('search') }}" method="GET" class="search-form">
-    <i class="fa fa-search search-icon"></i>
-    <input type="text" name="query" id="query" value="{{ request()->input('query') }}" class="search-box" placeholder="Search for product" required>
+<form action="{{ route('search') }}" method="GET" class="form-inline my-2 my-lg-0">
+    
+    <input type="text" name="query" id="query" value="{{ request()->input('query') }}" class="form-control mr-sm-2" placeholder="Search for product" required>
+    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
 </form>
+

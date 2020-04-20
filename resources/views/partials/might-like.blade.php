@@ -85,7 +85,7 @@ a:hover{
                             <div class="carousel-item" style="height: 20rem;">
                                 <div class="row">
             
-                                    @foreach($mightAlsoLike as $product)
+                                    @foreach($products_sa as $product)
                                     <div class="col-sm-3 col-xs-6">
                                         <a href="{{ route('shop.show', $product->slug) }}">
                                            <img src="{{ productImage($product->image) }}" alt="Image" style="width: 250px; height:250px;" class="img-responsive">

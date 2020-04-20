@@ -15,9 +15,11 @@
         /*background: yellow;*/
         font-size: 14px;
         margin-bottom:3px;
+        
     }
     .shop_img{
         width: 233px;
+
 
     }
     .shop a{
@@ -40,11 +42,11 @@
 </style>
 
 <div class="container">
-    @component('components.breadcrumbs')
+   
         <a href="/">Home</a>
         /
         <span>Shop</span>
-    @endcomponent
+    
 
     <div class="container">
         @if (session()->has('success_message'))
@@ -109,9 +111,10 @@
             </div> <!-- end products -->
 
             
-            {{ $products->appends(request()->input())->links() }}
         
         </div>
+        <br><br>
+            {{ $products->appends(request()->input())->links() }}
     </div>
 </div>
 </div>

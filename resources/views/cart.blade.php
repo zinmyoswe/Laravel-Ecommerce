@@ -24,11 +24,11 @@
 <div class="row">
    <div class="col-lg-9 col-sm-6 col-xs-12">
 
-    @component('components.breadcrumbs')
-        <a href="/">Home</a>
+   
+        <a href="/" style="color: black;">Home</a>
         /
         <span>Shopping Cart</span>
-    @endcomponent
+   
 
    @if(Cart::count() > 0)
     <h2>YOUR BAG <span class="title_cartpage">{{Cart::count()}} ITEMS </span></h2> 
@@ -119,18 +119,7 @@
 
             
 
-            @if (! session()->has('coupon'))
-
-                <a href="#" class="have-code">Have a Code?</a>
-
-                <div class="have-code-container">
-                    <form action="{{ route('coupon.store') }}" method="POST">
-                        {{ csrf_field() }}
-                        <input type="text" name="coupon_code" id="coupon_code">
-                        <button type="submit" class="button button-plain">Apply</button>
-                    </form>
-                </div> <!-- end have-code-container -->
-            @endif
+       
 
           
 
