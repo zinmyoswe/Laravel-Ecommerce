@@ -9,45 +9,45 @@
 
 ## Installation
 
-- Clone the repo and `cd` into it
+ Clone the repo and `cd` into it
 
-- `composer install`
+ `composer install`
 
-- Rename or copy `.env.example` file to `.env`
+ Rename or copy `.env.example` file to `.env`
 
-- `php artisan key:generate`
+ `php artisan key:generate`
 
-- Set your database credentials in your `.env` file
+ Set your database credentials in your `.env` file
 
-- Set your Stripe credentials in your `.env` file. Specifically `STRIPE_KEY` and `STRIPE_SECRET`
+ Set your Stripe credentials in your `.env` file. Specifically `STRIPE_KEY` and `STRIPE_SECRET`
 
-- Set your Algolia credentials in your `.env` file. Specifically `ALGOLIA_APP_ID` and `ALGOLIA_SECRET`. 
+ Set your Algolia credentials in your `.env` file. Specifically `ALGOLIA_APP_ID` and `ALGOLIA_SECRET`. 
 
-- Set your Braintree credentials in your `.env` file if you want to use PayPal. Specifically `BT_MERCHANT_ID`, `BT_PUBLIC_KEY`, `BT_PRIVATE_KEY`. If you don't, it should still work but won't show the paypal payment at checkout.
+ Set your Braintree credentials in your `.env` file if you want to use PayPal. Specifically `BT_MERCHANT_ID`, `BT_PUBLIC_KEY`, `BT_PRIVATE_KEY`. If you don't, it should still work but won't show the paypal payment at checkout.
 
-- Set your `APP_URL` in your `.env` file. This is needed for Voyager to correctly resolve asset URLs.
+ Set your `APP_URL` in your `.env` file. This is needed for Voyager to correctly resolve asset URLs.
 
-- Set `ADMIN_PASSWORD` in your `.env` file if you want to specify an admin password. If not, the default password is 'password'
+ Set `ADMIN_PASSWORD` in your `.env` file if you want to specify an admin password. If not, the default password is 'password'
 
-- `php artisan ecommerce:install`. This will migrate the database and run any seeders necessary. 
+ `php artisan ecommerce:install`. This will migrate the database and run any seeders necessary. 
 
-- `npm install`
+ `npm install`
 
-- `npm run dev`
+ `npm run dev`
 
-- `npm run watch`
+ `npm run watch`
 
-- `php artisan make:migration`
+ `php artisan make:migration`
 
-- `php artisan migrate`
+ `php artisan migrate`
 
-- `php artisan db:seed`
+ `php artisan db:seed`
 
-- `php artisan serve` or use Laravel Valet or Laravel Homestead
+ `php artisan serve` or use Laravel Valet or Laravel Homestead
 
-- Visit `localhost:8000` in your browser
+ Visit `localhost:8000` in your browser
 
-- Visit `/admin` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `adminweb@adminweb.com/password`
+ Visit `/admin` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `adminweb@adminweb.com/password`
 
 ## Package used
 
