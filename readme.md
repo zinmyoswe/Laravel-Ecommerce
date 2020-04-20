@@ -22,6 +22,8 @@
 - `php artisan ecommerce:install`. This will migrate the database and run any seeders necessary. 
 - `npm install`
 - `npm run dev`
+- `npm run watch`
+- `php artisan db:seed`
 - `php artisan serve` or use Laravel Valet or Laravel Homestead
 - Visit `localhost:8000` in your browser
 - Visit `/admin` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `adminweb@adminweb.com/password`
@@ -29,5 +31,6 @@
 ## Package used
 
  Stripe payment : https://github.com/cartalyst/stripe-laravel
+ Shopping cart  : https://github.com/hardevine/LaravelShoppingcart
 
 
