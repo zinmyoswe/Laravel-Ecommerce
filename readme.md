@@ -43,11 +43,11 @@
 
  `php artisan db:seed`
 
- `php artisan serve` or use Laravel Valet or Laravel Homestead
+ `php artisan serve`
 
  Visit `localhost:8000` in your browser
 
- Visit `/admin` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `adminweb@adminweb.com/password`
+ Visit `/admin/login` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `adminweb@adminweb.com/password`
 
 ## Package used
 

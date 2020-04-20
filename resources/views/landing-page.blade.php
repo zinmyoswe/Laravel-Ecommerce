@@ -407,6 +407,7 @@ Lace up some all new innovations for everyday speed.</p>
     {{-- ======================= start of bestseller ==================== --}}
         
     {{-- Bestseller code here --}}
+    @include('best-seller');
 
     {{-- ======================= end of bestseller ==================== --}}
 
@@ -448,40 +449,10 @@ Lace up some all new innovations for everyday speed.</p>
 
 
 
-        <div id="app">
-            <header class="with-background">
-                <div class="top-nav container">
-                    <div class="top-nav-left">
-                        <div class="logo">Ecommerce</div>
-                        {{ menu('main', 'partials.menus.main') }}
-                    </div>
-                    <div class="top-nav-right">
-                        @include('partials.menus.main-right')
-                    </div>
-                </div> <!-- end top-nav -->
-              
-            </header>
+       
+            
 
-            <div class="featured-section">
-
-                <div class="container">
-                    <h1 class="text-center">Laravel Ecommerce</h1>
-
-                    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vitae nisi, consequuntur illum dolores cumque pariatur quis provident deleniti nesciunt officia est reprehenderit sunt aliquid possimus temporibus enim eum hic lorem.</p>
-
-                    <div class="text-center button-container">
-                        <a href="#" class="button">Featured</a>
-                        <a href="#" class="button">On Sale</a>
-                    </div>
-
-                    {{-- <div class="tabs">
-                        <div class="tab">
-                            Featured
-                        </div>
-                        <div class="tab">
-                            On Sale
-                        </div>
-                    </div> --}}
+                  
 
                     <div class="products text-center">
                         @foreach ($products as $product)
@@ -498,15 +469,12 @@ Lace up some all new innovations for everyday speed.</p>
                         <a href="{{ route('shop.index') }}" class="button">View more products</a>
                     </div>
 
-                </div> <!-- end container -->
-
-            </div> <!-- end featured-section -->
 
             <blog-posts></blog-posts>
 
           
 
-        </div> <!-- end #app -->
+        
 
         
 @endsection      

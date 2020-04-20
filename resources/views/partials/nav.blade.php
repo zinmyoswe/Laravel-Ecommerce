@@ -12,6 +12,8 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('shop.index')}}">Shop</a>
       </li>
+
+          {{-- Main Nav code is here --}}
           
           @if (! (request()->is('checkout') || request()->is('guestCheckout')))
           {{ menu('main', 'partials.menus.main') }}
@@ -21,6 +23,8 @@
           @if (! (request()->is('checkout') || request()->is('guestCheckout')))
           @include('partials.menus.main-right')
           @endif
+
+          {{-- Main Nav code end --}}
      
 
 </ul>
