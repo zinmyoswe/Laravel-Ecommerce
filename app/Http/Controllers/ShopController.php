@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
+use DB;
 
 class ShopController extends Controller
 {
@@ -53,6 +54,7 @@ class ShopController extends Controller
     {
         $product = Product::where('slug', $slug)->firstOrFail();
         $mightAlsoLike = Product::where('slug', '!=', $slug)->mightAlsoLike()->get();
+        $products_sa = Product::where('slug', '!=', $slug)->mightAlsoLike()->get();
 
         $stockLevel = getStockLevel($product->quantity);
 
@@ -60,6 +62,7 @@ class ShopController extends Controller
             'product' => $product,
             'stockLevel' => $stockLevel,
             'mightAlsoLike' => $mightAlsoLike,
+            'products_sa' => $products_sa,
         ]);
     }
 

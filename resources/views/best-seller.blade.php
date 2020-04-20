@@ -26,6 +26,13 @@ background: #000;
  margin-top: 50px;
  margin-bottom: 50px;
 }
+a{
+    color: black;
+}
+
+a:hover{
+    color: black;
+}
 
 </style>
 <script type="text/javascript">
@@ -60,11 +67,11 @@ background: #000;
                                             @foreach($products_sa as $product)
 
                                     <div class="col-sm-3 col-xs-6">
-                                        <a href="">
+                                        <a href="{{ route('shop.show', $product->slug) }}">
                                             <img src="{{ productImage($product->image) }}" alt="Image" style="width: 250px; height:250px;" class="img-responsive">
                                             
                                         </a>
-                                        <p>{{$product->name}}</p>
+                                        <p><a href="{{ route('shop.show', $product->slug) }}">{{$product->name}}</a></p>
                                         <p><strong>$ {{$product->price}}</strong></p>
                                     </div>
                                    @endforeach
@@ -79,10 +86,10 @@ background: #000;
             
                                     @foreach($best_seller2 as $product)
                                     <div class="col-sm-3 col-xs-6">
-                                        <a href="">
+                                        <a href="{{ route('shop.show', $product->slug) }}">
                                            <img src="{{ productImage($product->image) }}" alt="Image" style="width: 250px; height:250px;" class="img-responsive">
                                         </a>
-                                         <p>{{$product->name}}</p>
+                                         <p><a href="{{ route('shop.show', $product->slug) }}">{{$product->name}}</a></p>
                                         <p><strong>$ {{$product->price}}</strong></p>
                                     </div>
                                 @endforeach

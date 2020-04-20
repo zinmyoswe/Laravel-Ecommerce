@@ -104,7 +104,7 @@
                     
 
                 @empty
-                    <div style="text-align: left">No items found</div>
+                    @include('notfound');
                 @endforelse
             </div> <!-- end products -->
 

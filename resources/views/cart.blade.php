@@ -8,9 +8,11 @@
 
 @section('content')
 
+
+
     @component('components.breadcrumbs')
-        <a href="#">Home</a>
-        <i class="fa fa-chevron-right breadcrumb-separator"></i>
+        <a href="/">Home</a>
+        /
         <span>Shopping Cart</span>
     @endcomponent
 
