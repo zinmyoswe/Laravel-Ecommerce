@@ -1,0 +1,131 @@
+html,body{
+	font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Abel', sans-serif;
+}
+
+.btn-dark {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-outline-dark {
+    color: #000;
+    border-color: #000;
+}
+
+
+/*------------------ Cart page ------------------------*/
+h2{
+	font-style: normal;
+    font-weight: 600;
+    font-family: 'Abel', sans-serif;
+}
+.title_cartpage{
+	font-size: 22px;
+	font-weight: 200;
+}
+
+.img_cartpage{
+	width: 120px;
+}
+.cart_item{
+	padding: 6px;
+}
+.cart_a{
+	color: #000;
+	font-family: 'Abel', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	margin-right: 40px;
+}
+.cart_p{
+	font-size: 14px;
+}
+
+
+
+
+/*------------------ Cart Sidebar ------------------------*/
+.cart_sidebar{
+	height: 495px;
+	width: 300px;
+	background-color: #f8f9fa;
+}
+.cart-calculator{
+	margin: 10px;
+
+	height: 295px;
+	width: 280px;
+	background-color: #fff;
+}
+
+.cart_sidebar2{
+
+	width: 300px;
+
+}
+.cart-fontstyle{
+	font-weight: bold;
+}
+
+.coupon_fr{
+	background: #f8f9fa;
+	width: 300px;
+	height: 80px;
+	padding: 2px;
+}
+.coupon_in{
+	margin: 10px;
+	background-color: #fff;
+	height: 50px;
+	width: 280px;
+
+
+}
+
+/*------------------ Detail page ------------------------*/
+
+
+/*------------------ SHOP page ------------------------*/
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.active{
+	font-weight: bold;
+}
+
+.detail_shop_img{
+    width: 400px;
+}
+
+.tex-dark{
+    color: #000;
+}
+
+.tex-cute{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.tex-cute2{
+    font-size: 20px;
+    font-weight: 400;
+}
+
