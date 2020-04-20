@@ -84,12 +84,13 @@
                     <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}" style="color: #000;">low - high</a> |
                     <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}" style="color: #000;">high - low</a>
                 </div>
+                </div>
              <br><br>
             <div class="row">
 
             
                 @forelse ($products as $product)
-                    <div class="col-lg-3 col-md-6 col-xs-12 col-sm-6">
+                    <div class="col-lg-3 col-md-3 col-xs-12 col-sm-6">
                     <div class="shop">
                         <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}" class="shop_img"></a>
                         <br><br>
@@ -101,23 +102,23 @@
                             <br><br>
                     <p style="color: grey; font-size: 12px;">9 colors</p>
 
-                    </div>
-                </div>
+                    </div> {{-- shop end --}}
+                </div>{{--  col-lg-3 col-md-3 col-xs-12 col-sm-6 end --}}
                     
 
                 @empty
                     @include('notfound');
                 @endforelse
-            </div> <!-- end products -->
+            </div> <!--  row end-->
 
             
         
-        </div>
+        
         <br><br>
             {{ $products->appends(request()->input())->links() }}
-    </div>
-</div>
-</div>
+    </div>{{-- col-md-10 mb-6 end --}}
+</div>{{--  row end --}}
+</div> {{-- container end --}}
 
 @endsection
 
