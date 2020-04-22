@@ -98,7 +98,7 @@
                         <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
                         <br>
 
-                        {{ $product->price }}
+                        ${{ $product->price }}
                             <br><br>
                     <p style="color: grey; font-size: 12px;">9 colors</p>
 

@@ -90,7 +90,7 @@
                 
                 <div class="col-lg-2">
                             <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}"
-                            style="width: 70px; font-size:12px; font-weight: 700; border-radius: 1px;">
+                            style="width: 50px; font-size:12px; font-weight: 700; border-radius: 2px; height: 30px;">
                                 @for ($i = 1; $i < 5 + 1 ; $i++)
                                     <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
                                 @endfor
