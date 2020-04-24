@@ -3,20 +3,95 @@
 @section('title', 'Checkout')
 
 @section('extra-css')
-    <style>
-        .mt-32 {
-            margin-top: 32px;
-        }
-    </style>
-
+ 
     <script src="https://js.stripe.com/v3/"></script>
 
 @endsection
 
 @section('content')
 
+ <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      /**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  box-sizing: border-box;
+
+  height: 40px;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+html,body{
+font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Abel', sans-serif;
+}
+
+.cart_sidebar{
+    height: 365px;
+    width: 300px;
+    background-color: #f8f9fa;
+}
+
+a{
+    color: black;
+}
+a:hover{
+    color: black;
+}
+
+    </style>
+
     <div class="container">
 
+        <br><br>
+    <h2>DELIVERY METHOD</h2>
+    <p class="lead">Free Shipping and Free Returns</p>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">SHIPPING ADDRESS</h4>
+
+        {{-- success error msg start --}}
         @if (session()->has('success_message'))
             <div class="spacer"></div>
             <div class="alert alert-success">
@@ -34,15 +109,12 @@
                 </ul>
             </div>
         @endif
+        {{-- success error msg end --}}
 
-        <h1 class="checkout-heading stylish-heading">Checkout</h1>
-        <div class="checkout-section">
-            <div>
-                <form action="{{ route('checkout.store') }}" method="POST" id="payment-form">
+         <form action="{{ route('checkout.store') }}" method="POST" id="payment-form">
                     {{ csrf_field() }}
-                    <h2>Billing Details</h2>
-
-                    <div class="form-group">
+                    
+                    <div class="mb-3">
                         <label for="email">Email Address</label>
                         @if (auth()->user())
                             <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
@@ -50,47 +122,53 @@
                             <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
                         @endif
                     </div>
-                    <div class="form-group">
+
+                
+                    <div class="mb-3">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
                     </div>
-                    <div class="form-group">
+
+
+                    <div class="mb-3">
                         <label for="address">Address</label>
                         <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
                     </div>
 
-                    <div class="half-form">
-                        <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
                             <label for="city">City</label>
                             <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}" required>
                         </div>
-                        <div class="form-group">
+                        <div class="col-md-5 mb-3">
                             <label for="province">Province</label>
                             <input type="text" class="form-control" id="province" name="province" value="{{ old('province') }}" required>
                         </div>
-                    </div> <!-- end half-form -->
 
-                    <div class="half-form">
-                        <div class="form-group">
+                        <div class="col-md-3 mb-3">
                             <label for="postalcode">Postal Code</label>
                             <input type="text" class="form-control" id="postalcode" name="postalcode" value="{{ old('postalcode') }}" required>
                         </div>
-                        <div class="form-group">
+                    </div> <!-- row end -->
+
+                    
+                        <div class="mb-3">
                             <label for="phone">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required>
                         </div>
-                    </div> <!-- end half-form -->
+                    
 
-                    <div class="spacer"></div>
+                    <hr class="mb-4">
 
-                    <h2>Payment Details</h2>
+                    <h4 class="mb-3">Payment</h4>
 
-                    <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
                         <label for="name_on_card">Name on Card</label>
                         <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">
                     </div>
 
-                    <div class="form-group">
+                    <div class="col-md-12">
                         <label for="card-element">
                           Credit or debit card
                         </label>
@@ -101,10 +179,12 @@
                         <!-- Used to display form errors -->
                         <div id="card-errors" role="alert"></div>
                     </div>
-                    <div class="spacer"></div>
+                    </div>
 
-                    <button type="submit" id="complete-order" class="button-primary full-width">Complete Order</button>
+                    <hr class="mb-4">
 
+                    <button type="submit" id="complete-order" class="btn btn-primary btn-lg btn-block">Checkout</button>
+                
 
                 </form>
 
@@ -126,63 +206,169 @@
                         </form>
                     </div>
                 @endif
-            </div>
 
 
+        </div>{{--  col-md-8 order-md-1 end --}}
+        <div class="col-md-4 order-md-2 mb-4">
+            <div class="cart_sidebar">
+                <br>
+               
+                
+                <h4 style="font-weight: 600; font-size: 22px; margin-left: 9px;">ORDER SUMMARY:</h4>
+                <div class="cart-calculator">
+                    <table class="table">
+                    <tr>
+                        <td>{{Cart::count()}} PRODUCTS</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Product total</td>
+                        <td>${{Cart::subtotal()}}</td>
 
-            <div class="checkout-table-container">
-                <h2>Your Order</h2>
+                    </tr>
+                     @if(session()->has('coupon'))
+                    <tr>
+                        <td>
+                            COUPON : {{session()->get('coupon')['name']}}
+                         </td>
 
-                <div class="checkout-table">
-                    @foreach (Cart::content() as $item)
-                    <div class="checkout-table-row">
-                        <div class="checkout-table-row-left">
-                            <img src="{{ productImage($item->model->image) }}" alt="item" class="checkout-table-img">
-                            <div class="checkout-item-details">
-                                <div class="checkout-table-item">{{ $item->model->name }}</div>
-                                <div class="checkout-table-description">{{ $item->model->details }}</div>
-                                <div class="checkout-table-price">{{ $item->model->price }}</div>
-                            </div>
-                        </div> <!-- end checkout-table -->
+                        <td>- ${{session()->get('coupon')['discount']}}
+                        <form method="post" action="{{route('coupon.destroy')}}" style="display:inline">
+                            {{csrf_field()}}
+                            {{method_field('delete')}}
+                            <button type="submit" class="btn btn-link" style="color: #000; font-size: 12px;"><span class="fa fa-trash"></span></button>
+                        </form>
+                        </td>
 
-                        <div class="checkout-table-row-right">
-                            <div class="checkout-table-quantity">{{ $item->qty }}</div>
-                        </div>
-                    </div> <!-- end checkout-table-row -->
-                    @endforeach
+                    </tr>
+                    @endif
+                    <tr>
+                        <td>Tax(13%)</td>
+                        <td>${{Cart::tax()}}</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery</td>
+                        <td>FREE</td>
+                    </tr>
+                    <tr style="font-weight: bold">
+                        <td>Total</td>
+                        <td>${{Cart::total()}}</td>
+                    </tr>
+                      
+                    @if (session()->has('coupon'))
+                    <tr >
+                        <td>Discount<br>
+                        Tax Amount<br>
+                        <b>Net Total</b>
+                        </td>
+                        <td>- ${{ $discount }}<br> 
+                            ${{ $newTax }}<br>
+                             <b>${{ $newTotal }} </b>                
+                            
+                        </td>
+                    </tr>
 
-                </div> <!-- end checkout-table -->
+                    <style type="text/css">
+                        .cart_sidebar{
+                            height: 465px;
+                            width: 300px;
+                            background-color: #f8f9fa;
+                        }
+                        .cart-calculator{
+                            margin: 10px;
 
-                <div class="checkout-totals">
-                    <div class="checkout-totals-left">
-                        Subtotal <br>
-                        @if (session()->has('coupon'))
-                            Discount ({{ session()->get('coupon')['name'] }}) :
-                            <br>
-                            <hr>
-                            New Subtotal <br>
-                        @endif
-                        Tax ({{config('cart.tax')}}%)<br>
-                        <span class="checkout-totals-total">Total</span>
+                            height: 395px;
+                            width: 280px;
+                            background-color: #fff;
+                        }
+                    </style>
+                    @endif
 
-                    </div>
+                    </table>
+                </div>
+            </div> {{-- cart_sidebar end --}}
+            <br>
 
-                    <div class="checkout-totals-right">
-                        {{ Cart::subtotal() }} <br>
-                        @if (session()->has('coupon'))
-                            -{{ $discount }} <br>
-                            <hr>
-                            {{ $newSubtotal }} <br>
-                        @endif
-                        {{ $newTax }} <br>
-                        <span class="checkout-totals-total">{{ $newTotal }}</span>
+            {{--    Coupon start --}}
+   <div class="coupon_fr" >
 
-                    </div>
-                </div> <!-- end checkout-totals -->
-            </div>
+    <div class="coupon_in">
+        <table class="table">
+            <tr>
+                <td>
+                <a class="btn btn-link" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" style="color: #000;">
+                    <b>PROMO CODE</b>
+                </a>
+                </td>
+                <td>
+                    <a class="btn btn-link" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" style="color: #000;">
+                    <i class="fa fa-chevron-down"></i> </a>
+                </td>
+            </tr>
+        </table>
+        <div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        <form method="post" action="{{route('coupon.store')}}">
+            {{csrf_field()}}
+            <input type="text" name="coupon_code" class="form-control" placeholder="CODES ARE CASE-SENSITIVE">
+            <p style="font-size: 12px; color: grey;">Casing & hyphens need to be exact</p>
 
-        </div> <!-- end checkout-section -->
+            <button type="submit" class="btn btn-dark btn-lg btn-block">Apply <i class="fa fa-arrow-right" style="margin-left: 35px;"></i></button>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
+</div>
+</div>
+    {{--    Coupon end --}}
+    <br>
+
+    <div class="ORDER DETAILS">
+        <h4 style="font-weight: 600; font-size: 22px;">ORDER DETAILS</h4>
+        @foreach (Cart::content() as $item)
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <img src="{{ productImage($item->model->image) }}" alt="item" class="img_cartpage">
+                </div>
+                <div class="col-lg-7">
+                    <a href="{{route('shop.show', $item->model->slug)}}" style="color: black;"> {{$item->model->name}}</a>
+                    <p>${{ $item->model->price }}</p>
+                    
+                <p class="cart_p">COLOR: Black <br>
+                   SIZE: 9.5  / Quantity: {{ $item->qty }}  </p>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div> {{-- ORDER DETAILS end --}}
+    
+    <br>
+    <div class="cart_needhelp">
+            <h5>NEED HELP?</h5>
+            <p><a href="" style="color: #000;">Shipping</a></p>
+            <p><a href="" style="color: #000;">Returns & Exchanges</a></p>
+    </div>
+
+    <div class="cart_sidebar2">
+    <h5>ACCEPTED PAYMENT METHODS</h5>
+    <img src="https://www.adidas.com/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw88ec105e/us_payment_methods.png" width="300px">
+
+    
+    </div>{{--  cart_sidebar2 end --}}
+
+        </div>{{-- col-md-4 order-md-2 mb-4 end --}}
+    </div> {{-- row end --}}
+
+       
+
+        
+    </div> {{-- container end --}}
+
+    <br><br>
 
 @endsection
 

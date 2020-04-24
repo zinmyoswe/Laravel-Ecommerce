@@ -28,6 +28,10 @@
 
 ![image](https://user-images.githubusercontent.com/29988949/80226203-e8ad1280-8600-11ea-81be-24419271e6ee.png)
 
+`Shipping Page`
+
+![image](https://user-images.githubusercontent.com/29988949/80250312-6df7ed80-8628-11ea-8faf-9ec7541c51c6.png)
+
 `LOGIN Page`
 
 ![image](https://user-images.githubusercontent.com/29988949/80223792-9c140800-85fd-11ea-995d-a39a86f7e662.png)
