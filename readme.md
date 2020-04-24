@@ -11,14 +11,28 @@
 
 `INDEX Page`
 
-![image](https://user-images.githubusercontent.com/29988949/80223792-9c140800-85fd-11ea-995d-a39a86f7e662.png)
+![image](https://user-images.githubusercontent.com/29988949/80224963-4c364080-85ff-11ea-9f46-b383eae3e879.png)
 
 `Product Slide`
 ![image](https://user-images.githubusercontent.com/29988949/80224163-2f4d3d80-85fe-11ea-9cdb-bf67bd3dceb6.png)
 
+`PRODUCTS Page`
+
+![image](https://user-images.githubusercontent.com/29988949/80225185-93bccc80-85ff-11ea-80e4-dc129aecc335.png)
+
+`PRODUCT DETAIL Page`
+
+![image](https://user-images.githubusercontent.com/29988949/80225662-34ab8780-8600-11ea-9dce-11e7ecf75ffd.png)
+
+`CART PAGE`
+
+![image](https://user-images.githubusercontent.com/29988949/80226203-e8ad1280-8600-11ea-81be-24419271e6ee.png)
+
 `LOGIN Page`
 
 ![image](https://user-images.githubusercontent.com/29988949/80223792-9c140800-85fd-11ea-995d-a39a86f7e662.png)
+
+
 
 
 
