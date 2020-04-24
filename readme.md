@@ -7,6 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## Demo
+
+`LOGIN Page`
+
+![image](https://user-images.githubusercontent.com/29988949/80223792-9c140800-85fd-11ea-995d-a39a86f7e662.png)
+
 ## Installation
 
  Clone the repo and `cd` into it
