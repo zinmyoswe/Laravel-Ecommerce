@@ -140,3 +140,9 @@ h2{
 	border-radius: 0;
 }
 
+.alert-danger{
+	color: #dc3545;
+	background: white;
+	border-color: #dc3545;
+}
+
