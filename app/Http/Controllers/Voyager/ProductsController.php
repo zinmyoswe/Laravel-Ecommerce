@@ -136,7 +136,7 @@ class ProductsController extends VoyagerBaseController
             : DB::table($dataType->name)->where('id', $id)->first(); // If Model doest exist, get data from table name
 
         foreach ($dataType->editRows as $key => $row) {
-            $details = json_decode($row->details);
+            $details = json_encode($row->details);
             $dataType->editRows[$key]['col_width'] = isset($details->width) ? $details->width : 100;
         }
 

@@ -80,9 +80,9 @@
                                 <label>Categories</label>
 
                                 <ul style="list-style-type: none; padding-left: 0">
-                                {{-- @foreach ($allCategories as $category)
+                                @foreach ($allCategories as $category)
                                     <li><label><input value="{{ $category->id }}" type="checkbox" name="category[]" style="margin-right: 5px;" {{ $categoriesForProduct->contains($category) ? 'checked' : '' }}>{{ $category->name }}</label></li>
-                                @endforeach --}}
+                                @endforeach
                                 </ul>
                             </div> <!-- end form-group -->
 
