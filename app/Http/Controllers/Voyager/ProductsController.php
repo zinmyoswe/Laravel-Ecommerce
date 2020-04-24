@@ -234,7 +234,7 @@ class ProductsController extends VoyagerBaseController
                             : false;
 
         foreach ($dataType->addRows as $key => $row) {
-            $details = json_decode($row->details);
+            $details = json_encode($row->details);
             $dataType->addRows[$key]['col_width'] = isset($details->width) ? $details->width : 100;
         }
 

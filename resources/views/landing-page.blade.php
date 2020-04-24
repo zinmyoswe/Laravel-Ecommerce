@@ -127,7 +127,7 @@ h4{
           <div class="carousel-caption text-left">
             <h1 style="color: #000; font-weight: 600;">RUN FOR THE OCEANS</h1>
             <p style="color: #000;">It's time to take action against marine plastic pollution. Rally your <br>friends to join the movement.</p>
-            <p><a class="btn btn-lg btn-dark" href="#" role="button" style="margin-bottom: 160px">LEARN MORE <i class="fa fa-arrow-right"></i></a></p>
+            <p><a class="btn btn-lg btn-dark" href="{{route('shop.index')}}" role="button" style="margin-bottom: 160px">LEARN MORE <i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
       </div>
@@ -138,17 +138,17 @@ h4{
           <div class="carousel-caption text-left">
             <h1>NITE JOGGER FOR ALL</h1>
             <p>Light up the night in new Nite Jogger colorways. Photo by Cole Younger.</p>
-            <p><a class="btn btn-lg btn-light" href="#" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+            <p><a class="btn btn-lg btn-light" href="{{route('shop.index')}}" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="https://brand.assets.adidas.com/f_auto,q_auto,fl_lossy/capi/enGB/Images/new-styles-added-hp-masthead-desktop_143-363097.jpg" alt="" width="100%" height="100%" fill="#777">
+        <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/training-aSMC-ss20-mh-earthday-image2-d_tcm221-485018.jpg" alt="" width="100%" height="100%" fill="#777">
 
       <div class="carousel-caption text-left">
-            <h1 class="add2_text">NEW STYLES ADDED - 33% OFF</h1>
-            <p class="add2_text">Keep celebrating 70 years of adidas. Enjoy 33% off today and Show Your Stripes!</p>
-            <p><a class="btn btn-lg btn-dark" href="#" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+            <h1>HEY WORLD!</h1>
+            <p>Earth Day is Every Day, the new collection that respects and celebrates our planet.</p>
+            <p><a class="btn btn-lg btn-light" href="{{route('shop.index')}}" role="button">SHOP COLLECTION <i class="fa fa-arrow-right"></i></a></p>
           </div>
       </div>
       <div class="carousel-item">
@@ -159,7 +159,7 @@ h4{
             <h1>KICK UP A STORM IN SHOX</h1>
             <p>The subversive Nike Shox R4 is making<br>
 waves in clean monochrome colourways.</p>
-            <p><a class="btn btn-lg btn-light" href="#" role="button" style="margin-bottom: 130px">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+            <p><a class="btn btn-lg btn-light" href="{{route('shop.index')}}" role="button" style="margin-bottom: 130px">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
           </div>
         </div>
       </div>
