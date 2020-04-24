@@ -129,3 +129,14 @@ h2{
     font-weight: 400;
 }
 
+.alert-success{
+	color: rgb(23, 43, 77);  
+	font-size: 14px;
+	background: #ebedee;
+	border-color: #ebedee;
+}
+
+.alert{
+	border-radius: 0;
+}
+

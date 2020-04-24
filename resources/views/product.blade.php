@@ -27,6 +27,9 @@
     color: #fff;
     background-color: black !important;
 }
+.slick3-dots .slick-active{
+    border-bottom: 2px solid black;
+}
 </style>
       
         
