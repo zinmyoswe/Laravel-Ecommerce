@@ -59,7 +59,7 @@
                                 <div>{{ $order->id }}</div>
                             </div><div>
                                 <div class="uppercase font-bold">Total</div>
-                                <div>{{ presentPrice($order->billing_total) }}</div>
+                                <div>{{ $order->billing_total }}</div>
                             </div>
                         </div>
                         <div>
@@ -78,7 +78,7 @@
                                     <div>
                                         <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
                                     </div>
-                                    <div>{{ presentPrice($product->price) }}</div>
+                                    <div>{{ $product->price }}</div>
                                     <div>Quantity: {{ $product->pivot->quantity }}</div>
                                 </div>
                             </div>

@@ -58,7 +58,7 @@
                                 <div>{{ $order->id }}</div>
                             </div><div>
                                 <div class="uppercase font-bold">Total</div>
-                                <div>{{ presentPrice($order->billing_total) }}</div>
+                                <div>{{ $order->billing_total }}</div>
                             </div>
                         </div>
                         <div>
@@ -84,15 +84,15 @@
                                 </tr>
                                 <tr>
                                     <td>Subtotal</td>
-                                    <td>{{ presentPrice($order->billing_subtotal) }}</td>
+                                    <td>{{ $order->billing_subtotal }}</td>
                                 </tr>
                                 <tr>
                                     <td>Tax</td>
-                                    <td>{{ presentPrice($order->billing_tax) }}</td>
+                                    <td>{{ $order->billing_tax }}</td>
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td>{{ presentPrice($order->billing_total) }}</td>
+                                    <td>{{ $order->billing_total }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -117,7 +117,7 @@
                                     <div>
                                         <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
                                     </div>
-                                    <div>{{ presentPrice($product->price) }}</div>
+                                    <div>{{ $product->price }}</div>
                                     <div>Quantity: {{ $product->pivot->quantity }}</div>
                                 </div>
                             </div>
