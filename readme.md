@@ -32,6 +32,10 @@
 
 ![image](https://user-images.githubusercontent.com/29988949/80250312-6df7ed80-8628-11ea-8faf-9ec7541c51c6.png)
 
+`Stripe Payment success`
+
+![image](https://user-images.githubusercontent.com/29988949/80250520-e3fc5480-8628-11ea-88af-d3b228c9a37f.png)
+
 `LOGIN Page`
 
 ![image](https://user-images.githubusercontent.com/29988949/80223792-9c140800-85fd-11ea-995d-a39a86f7e662.png)
