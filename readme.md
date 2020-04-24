@@ -9,9 +9,20 @@
 
 ## Demo
 
+`INDEX Page`
+
+![image](https://user-images.githubusercontent.com/29988949/80223792-9c140800-85fd-11ea-995d-a39a86f7e662.png)
+
+`Product Slide`
+![image](https://user-images.githubusercontent.com/29988949/80224163-2f4d3d80-85fe-11ea-9cdb-bf67bd3dceb6.png)
+
 `LOGIN Page`
 
 ![image](https://user-images.githubusercontent.com/29988949/80223792-9c140800-85fd-11ea-995d-a39a86f7e662.png)
+
+
+
+
 
 ## Installation
 
