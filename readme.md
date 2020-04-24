@@ -11,7 +11,7 @@
 
 `INDEX Page`
 
-![image](https://user-images.githubusercontent.com/29988949/80224963-4c364080-85ff-11ea-9f46-b383eae3e879.png)
+![image](https://user-images.githubusercontent.com/29988949/80226543-58bb9880-8601-11ea-88b9-b0c870c95f7c.png)
 
 `Product Slide`
 ![image](https://user-images.githubusercontent.com/29988949/80224163-2f4d3d80-85fe-11ea-9cdb-bf67bd3dceb6.png)
@@ -31,6 +31,10 @@
 `LOGIN Page`
 
 ![image](https://user-images.githubusercontent.com/29988949/80223792-9c140800-85fd-11ea-995d-a39a86f7e662.png)
+
+`ADMIN PAGE`
+
+![image](https://user-images.githubusercontent.com/29988949/80226592-6bce6880-8601-11ea-9db3-5755162c92f5.png)
 
 
 
