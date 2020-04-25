@@ -21,7 +21,7 @@
                             <span>$${(suggestion.price / 100).toFixed(2)}</span>
                         </div>
                         <div class="algolia-details">
-                            <span>${suggestion._highlightResult.details.value}</span>
+                            <span></span>
                         </div>
                     `;
 
