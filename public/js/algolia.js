@@ -18,7 +18,7 @@
                                 <img src="${window.location.origin}/storage/${suggestion.image}" alt="img" class="algolia-thumb">
                                 ${suggestion._highlightResult.name.value}
                             </span>
-                            <span>$${(suggestion.price / 100).toFixed(2)}</span>
+                            <span>$${(suggestion.price).toFixed(2)}</span>
                         </div>
                         <div class="algolia-details">
                             <span></span>

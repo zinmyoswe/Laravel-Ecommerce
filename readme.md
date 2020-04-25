@@ -20,9 +20,10 @@
 
 ![image](https://user-images.githubusercontent.com/29988949/80225185-93bccc80-85ff-11ea-80e4-dc129aecc335.png)
 
+
 `Algolia Search`
 
-![image](https://user-images.githubusercontent.com/29988949/80266689-0f476980-8652-11ea-918d-c7bcd94e1b20.png)
+![image](https://user-images.githubusercontent.com/29988949/80266763-8250e000-8652-11ea-9cac-688462fb6c0d.png)
 
 `PRODUCT DETAIL Page`
 
