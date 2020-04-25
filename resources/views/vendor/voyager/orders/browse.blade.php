@@ -103,7 +103,7 @@
                                         @endcan
                                         @foreach($dataType->browseRows as $row)
                                             <td>
-                                                <?php $options = json_decode($row->details); ?>
+                                                <?php $options = json_encode($row->details); ?>
                                                 @if($row->type == 'image')
                                                     <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
                                                 @elseif($row->type == 'relationship')
