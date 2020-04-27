@@ -8,13 +8,27 @@
 
 @section('content')
 
-    @component('components.breadcrumbs')
-        <a href="/">Home</a>
-        <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span>My Orders</span>
-    @endcomponent
+<style type="text/css">
+    a{
+        color: black;
+    }
+    a:hover{
+        color: black;
+    }
+    ul li{
+        list-style: none;
+    }
+</style>
+
+       
+    
 
     <div class="container">
+
+         <a href="/">Home</a>
+        /
+        <span>My Orders</span>
+
         @if (session()->has('success_message'))
             <div class="alert alert-success">
                 {{ session()->get('success_message') }}
@@ -30,9 +44,9 @@
                 </ul>
             </div>
         @endif
-    </div>
+    
 
-    <div class="products-section my-orders container">
+   
         <div class="sidebar">
 
             <ul>
@@ -40,58 +54,64 @@
               <li class="active"><a href="{{ route('orders.index') }}">My Orders</a></li>
             </ul>
         </div> <!-- end sidebar -->
-        <div class="my-profile">
-            <div class="products-header">
-                <h1 class="stylish-heading">My Orders</h1>
-            </div>
+        
+                <h2>My Orders</h2>
 
-            <div>
-                @foreach ($orders as $order)
-                <div class="order-container">
-                    <div class="order-header">
-                        <div class="order-header-items">
-                            <div>
-                                <div class="uppercase font-bold">Order Placed</div>
-                                <div>{{ presentDate($order->created_at) }}</div>
-                            </div>
-                            <div>
-                                <div class="uppercase font-bold">Order ID</div>
-                                <div>{{ $order->id }}</div>
-                            </div><div>
-                                <div class="uppercase font-bold">Total</div>
-                                <div>{{ $order->billing_total }}</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="order-header-items">
-                                <div><a href="{{ route('orders.show', $order->id) }}">Order Details</a></div>
-                                <div>|</div>
-                                <div><a href="#">Invoice</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-products">
+                <div class="row">
+                    <div class="col-lg-12">
+                       <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col">Order ID</th>
+                              <th scope="col"> Order Placed </th>
+                              <th scope="col">Total</th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach ($orders as $order)
+                            
+                            <tr>
+                              <th scope="row">{{ $order->id }}</th>
+                              <td>{{ presentDate($order->created_at) }}</td>
+                              <td>${{ $order->billing_total }}</td>
+                              <td><a href="{{ route('orders.show', $order->id) }}">Order Details</a> | <a href="#">Invoice</a></td>
+                              <td>
+                                  <div class="ORDER DETAILS">
+                        <h4 style="font-weight: 600; font-size: 22px;">ORDER DETAILS</h4>
                         @foreach ($order->products as $product)
-                            <div class="order-product-item">
-                                <div><img src="{{ asset($product->image) }}" alt="Product Image"></div>
-                                <div>
-                                    <div>
-                                        <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
-                                    </div>
-                                    <div>{{ $product->price }}</div>
-                                    <div>Quantity: {{ $product->pivot->quantity }}</div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <img src="{{ productImage($product->image) }}" alt="item" class="img_cartpage">
                                 </div>
-                            </div>
+                                <div class="col-lg-7">
+                                  <a href="{{ route('shop.show', $product->slug) }}" style="color: black;">{{ $product->name }}</a>
+
+                                    <p>${{ $product->price }}</p>
+                                    
+                                <p class="cart_p">COLOR: Black <br>
+                                   SIZE: 9.5  / Quantity: {{ $product->pivot->quantity }}  </p>
+                                </div>
+                                </div>
+                        </div>
                         @endforeach
-
+                    </div> {{-- ORDER DETAILS end --}}
+                              </td>
+                            </tr>
+                            @endforeach
+  
+                      </tbody>
+                    </table>
                     </div>
-                </div> <!-- end order-container -->
-                @endforeach
-            </div>
+                </div>
+            
 
-            <div class="spacer"></div>
+
+         
         </div>
-    </div>
+    
 
 @endsection
 
