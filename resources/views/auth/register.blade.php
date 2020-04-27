@@ -46,7 +46,7 @@
                     required>
               </div>
               
-              <button type="button" class="btn btn-dark btn-lg btn-block">Register</button>
+              <button type="submit" class="btn btn-dark btn-lg btn-block">Register</button>
             </form>
             <br>
             <p style="text-align: center; color: grey;">
