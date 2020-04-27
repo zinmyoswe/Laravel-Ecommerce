@@ -18,12 +18,20 @@
     a:hover{
         color: black;
     }
+
+    
+
+.fufu{
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
 </style>
 
         
 
 
-    <div class="container">
+    <div class="container fufu">
          <a href="/">Home</a>
         /
         <span>MyAccount</span>
@@ -32,6 +40,8 @@
         <div class="row">
 
             <div class="col-lg-8">
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
 
                 @if (session()->has('success_message'))
                     <div class="alert alert-success">
@@ -71,12 +81,20 @@
                   <button type="submit" class="btn btn-dark btn-lg btn-block">Update</button>
                 </form>
             </div>
+            </div>
+            </div>
 
             <div class="col-lg-4">
-                <ul>
-              <li class="active"><a href="{{ route('users.edit') }}">My Profile</a></li>
-              <li><a href="{{ route('orders.index') }}">My Orders</a></li>
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                <ul class="nav flex-column">
+              <li class="nav-item active"><a href="{{ route('users.edit') }}" class="nav-link">My Profile</a></li>
+             
+              <li class="nav-item"><a href="{{ route('orders.index') }}" class="nav-link">My Orders</a></li>
+             
                 </ul>
+            </div>
+        </div>
             </div>
         </div>
     </div>
