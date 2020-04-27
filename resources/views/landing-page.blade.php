@@ -3,7 +3,7 @@
 @section('title', 'Menu')
 
 @section('extra-css')
-    {{-- <link rel="stylesheet" href="{{ asset('css/algolia.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/algolia.css') }}">
 @endsection
 
 @section('content')
@@ -411,33 +411,19 @@ Lace up some all new innovations for everyday speed.</p>
 
     {{-- ======================= end of bestseller ==================== --}}
 
-    <div class="container">
+ {{--    <div class="container">
                 home page
         <ul>
         @foreach($products as $product)
-            <li><a href="">{{$product->name}}<br>
+            <li><a href="{{ route('shop.show', $product->slug) }}">{{$product->name}}<br>
             ${{$product->price}}</a></li>
         @endforeach
         </ul>
 
 
-    </div>{{--  container end --}}
+    </div> --}}{{--  container end --}}
 
-     <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <br><br>
-
-    <!-- /END THE FEATURETTES -->
+     
 
   </div><!-- /.container -->
 
@@ -454,20 +440,6 @@ Lace up some all new innovations for everyday speed.</p>
 
                   
 
-                    <div class="products text-center">
-                        @foreach ($products as $product)
-                            <div class="product">
-                                <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}" alt="product"></a>
-                                <a href="{{ route('shop.show', $product->slug) }}"><div class="product-name">{{ $product->name }}</div></a>
-                                <div class="product-price">{{ $product->price }}</div>
-                            </div>
-                        @endforeach
-
-                    </div> <!-- end products -->
-
-                    <div class="text-center button-container">
-                        <a href="{{ route('shop.index') }}" class="button">View more products</a>
-                    </div>
 
 
             <blog-posts></blog-posts>
@@ -477,10 +449,11 @@ Lace up some all new innovations for everyday speed.</p>
         
 
         
-@endsection      
+@endsection
 
 @section('extra-js')
-        
-        <script src="js/app.js"></script>
-
+    <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="{{ asset('js/algolia.js') }}"></script>
 @endsection

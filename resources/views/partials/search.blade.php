@@ -16,7 +16,7 @@
 	.aa-input-search {
     width: 400px;
     padding: 12px 28px 12px 12px;
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     border-radius: 4px;
     -webkit-transition: .2s;
     transition: .2s;
