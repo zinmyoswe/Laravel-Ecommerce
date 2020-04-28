@@ -9,7 +9,7 @@
         <!-- CSRF Token -->
         {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
 
-        <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png"/>
+        <link rel="icon" type="image/png" href="https://myanmaryellowpages.biz/files/wi1oaylrkpnxm5ugnd4b/active_gym.jpg"/>
 
         <title>Laravel Ecommerce | @yield('title', '')</title>
 
