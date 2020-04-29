@@ -67,10 +67,6 @@
 
  Set your database credentials in your `.env` file
 
- Set your Stripe credentials in your `.env` file. Specifically `STRIPE_KEY` and `STRIPE_SECRET`
-
- Set your Algolia credentials in your `.env` file. Specifically `ALGOLIA_APP_ID` and `ALGOLIA_SECRET`. 
-
  Set your Braintree credentials in your `.env` file if you want to use PayPal. Specifically `BT_MERCHANT_ID`, `BT_PUBLIC_KEY`, `BT_PRIVATE_KEY`. If you don't, it should still work but won't show the paypal payment at checkout.
 
  Set your `APP_URL` in your `.env` file. This is needed for Voyager to correctly resolve asset URLs.
@@ -96,6 +92,16 @@
  Visit `localhost:8000` in your browser
 
  Visit `/admin/login` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `adminweb@adminweb.com/password`
+
+## Stripe
+
+ Enter your `STRIPE_KEY` and `STRIPE_SECRET` in `.env` file.
+ these key can be get from https://dashboard.stripe.com/test/dashboard by creating stripe account
+
+`
+STRIPE_KEY   = Enter your STRIPE_KEY
+STRIPE_SECRET= Enter your STRIPE_SECRET key
+`
 
 ## Package used
 
