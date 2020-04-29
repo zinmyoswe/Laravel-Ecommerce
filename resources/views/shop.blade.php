@@ -146,6 +146,24 @@
     @endforeach
     </div>
   </div>
+
+  <div class="btn-group" style="margin-right: 4px;">
+    <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuOffset3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+      PRICE
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset3">
+    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'price_less_than_50']) }}">
+            less than $50</a>
+    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'price_50_to_100']) }}">
+            $50 - $100</a>
+    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'price_100_to_150']) }}">
+            $100 - $150</a>
+    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'price_150_or_more']) }}">
+            $150 or more</a>
+         
+    </div>
+  </div>
+
   <div class="btn-group">
     <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuOffset2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
       SORT BY
@@ -157,6 +175,7 @@
             Price :high - low</a>
     <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'Top_Sellers']) }}">
             Top Sellers</a>
+        
     </div>
   </div>
 </div>

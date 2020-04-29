@@ -36,6 +36,37 @@ class ShopController extends Controller
         } elseif (request()->sort == 'Top_Sellers') {
             $products = $products->orderBy('id', 'desc')->paginate($pagination);
         }
+        elseif (request()->sort == 'price_50_to_100') {
+            $products = DB::table('products')
+                    ->where('price', '>=',50)
+                    ->where('price', '<=', 100)
+                    ->orderBy('id', 'desc')
+                    ->paginate($pagination);
+        }
+
+        elseif (request()->sort == 'price_100_to_150') {
+            $products = DB::table('products')
+                    ->where('price', '>=',100)
+                    ->where('price', '<=', 150)
+                    ->orderBy('id', 'desc')
+                    ->paginate($pagination);
+        }
+
+        elseif (request()->sort == 'price_150_or_more') {
+            $products = DB::table('products')
+                    ->where('price', '>=', 150)
+                    ->orderBy('id', 'desc')
+                    ->paginate($pagination);
+        }
+
+        elseif (request()->sort == 'price_less_than_50') {
+            $products = DB::table('products')
+                    ->where('price', '<=', 50)
+                    ->orderBy('id', 'desc')
+                    ->paginate($pagination);
+        }
+
+
          else {
             $products = $products->paginate($pagination);
         }
