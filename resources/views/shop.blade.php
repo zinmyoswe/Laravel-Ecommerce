@@ -40,7 +40,42 @@
         color: black;
     }
 
-    .dropdown-item {
+   
+
+.btn-light {
+    color: black;
+    background-color: white;
+    border-color: whitesmoke;
+    border-radius: 0;
+}
+
+.btn-light:hover{
+    border-color: black;
+    background-color: white;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: black;
+    text-align: left;
+    list-style: none;
+    background-color: white;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0;
+}
+
+ .dropdown-item {
     display: block;
     width: 100%;
     padding: .25rem 1.5rem;
@@ -53,16 +88,7 @@
     border: 0;
 }
 
-.btn-light {
-    color: black;
-    background-color: white;
-    border-color: whitesmoke;
-}
 
-.btn-light:hover{
-    border-color: black;
-    background-color: white;
-}
 </style>
 
 <div class="container">
