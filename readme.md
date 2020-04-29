@@ -95,13 +95,15 @@
 
 ## Stripe
 
- Enter your `STRIPE_KEY` and `STRIPE_SECRET` in `.env` file.
- these key can be get from https://dashboard.stripe.com/test/dashboard by creating stripe account
+ Enter your `stripe key` and Enter your `stripe secret` in `.env` file.
+ 
+ these keys can be get from https://dashboard.stripe.com/test/dashboard by creating stripe account
 
-`
-STRIPE_KEY   = Enter your STRIPE_KEY
-STRIPE_SECRET= Enter your STRIPE_SECRET key
-`
+```php
+STRIPE_KEY   = Enter your stripe key
+
+STRIPE_SECRET= Enter your stripe secret
+```
 
 ## Package used
 
