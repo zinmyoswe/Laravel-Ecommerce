@@ -133,31 +133,34 @@
                 <div class="col-lg-7 mb-6">
 
                    <!-- Example single danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" margin-left: 8px;">
-   PRODUCT TYPE
-  </button>
-  <div class="dropdown-menu">
-    @foreach ($categories as $category)
+                
+                <div class="d-flex">
+  <div class="dropdown mr-1">
+    <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+      PRODUCT TYPE
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+      @foreach ($categories as $category)
         <a class="dropdown-item" href="{{ route('shop.index', ['category' => $category->slug]) }}" style="color: #000;">
             {{ $category->name }}</a>
     @endforeach
+    </div>
   </div>
-
-  <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" margin-left: 8px;">
-    SORT BY
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}" style="color: #000;">
+  <div class="btn-group">
+    <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuOffset2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+      SORT BY
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset2">
+      <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}" style="color: #000;">
             Price :low - high</a>
     <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}">
             Price :high - low</a>
     <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'Top_Sellers']) }}">
             Top Sellers</a>
+    </div>
   </div>
-  
 </div>
-
+  
                    
                   {{--   <b style="margin-left: 35px;">Price :</b>
                     <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}" style="color: #000;">low - high</a> |
