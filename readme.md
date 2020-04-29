@@ -105,6 +105,18 @@ STRIPE_KEY   = Enter your stripe key
 STRIPE_SECRET= Enter your stripe secret
 ```
 
+## Algolia
+
+ Enter your `algolia app_id` and Enter your `algolia secret` in `.env` file.
+
+ these keys can be get from https://www.algolia.com/apps/ by creating algolia account
+
+```php
+ALGOLIA_APP_ID = Enter your algolia app_id
+
+ALGOLIA_SECRET = Enter your algolia secret
+```
+
 ## Package used
 
  Stripe payment : https://github.com/cartalyst/stripe-laravel
