@@ -129,12 +129,12 @@
 
         <div class="col-md-10 mb-6">
             <div class="row">
-                <div class="col-lg-5 mb-6"><h4 style="font-weight: bold">{{$categoryName}}</h4></div>
-                <div class="col-lg-7 mb-6">
+                <div class="col-lg-7 mb-6"><h4 style="font-weight: bold">{{$categoryName}}</h4></div>
+                <div class="col-lg-5 mb-6">
 
                    <!-- Example single danger button -->
                 
-                <div class="d-flex">
+                <div class="d-flex" style="margin-left: 70px;">
   <div class="dropdown mr-1">
     <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
       PRODUCT TYPE
