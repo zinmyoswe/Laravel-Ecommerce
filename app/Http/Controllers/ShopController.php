@@ -33,7 +33,10 @@ class ShopController extends Controller
             $products = $products->orderBy('price')->paginate($pagination);
         } elseif (request()->sort == 'high_low') {
             $products = $products->orderBy('price', 'desc')->paginate($pagination);
-        } else {
+        } elseif (request()->sort == 'Top_Sellers') {
+            $products = $products->orderBy('id', 'desc')->paginate($pagination);
+        }
+         else {
             $products = $products->paginate($pagination);
         }
 

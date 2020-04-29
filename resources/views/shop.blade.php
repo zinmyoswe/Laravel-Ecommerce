@@ -39,6 +39,30 @@
     a{
         color: black;
     }
+
+    .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #000;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: white;
+    border: 0;
+}
+
+.btn-light {
+    color: black;
+    background-color: white;
+    border-color: whitesmoke;
+}
+
+.btn-light:hover{
+    border-color: black;
+    background-color: white;
+}
 </style>
 
 <div class="container">
@@ -80,9 +104,28 @@
         <div class="col-md-10 mb-6">
             <div class="row">
                 <div class="col-lg-9 mb-6"><h4 style="font-weight: bold">{{$categoryName}}</h4></div>
-                <div class="col-lg-3 mb-6"><b style="margin-left: 35px;">Price :</b>
+                <div class="col-lg-3 mb-6">
+                    
+                    <div class="dropdown" style="margin-left:130px;">
+                  <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    SORT BY
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}" style="color: #000;">
+                        Price :low - high</a>
+                    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}">
+                        Price :high - low</a>
+                    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'Top_Sellers']) }}">
+                        Top Sellers</a>
+                  </div>
+                </div>
+                    
+                  {{--   <b style="margin-left: 35px;">Price :</b>
                     <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}" style="color: #000;">low - high</a> |
                     <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}" style="color: #000;">high - low</a>
+                    <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'Top_Sellers']) }}" style="color: #000;">Top Sellers</a> --}}
+                   
                 </div>
                 </div>
              <br><br>
