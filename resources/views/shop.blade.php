@@ -81,11 +81,11 @@
     padding: .25rem 1.5rem;
     clear: both;
     font-weight: 400;
-    color: #000;
+    color: #000 !important;
     text-align: inherit;
     white-space: nowrap;
     background-color: white;
-    border: 0;
+    border: 0;  
 }
 
 
@@ -169,6 +169,8 @@
       SORT BY
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset2">
+    <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'Newest']) }}">
+            Newest</a>
       <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'low_high']) }}" style="color: #000;">
             Price :low - high</a>
     <a class="dropdown-item" href="{{ route('shop.index', ['category'=> request()->category, 'sort' => 'high_low']) }}">

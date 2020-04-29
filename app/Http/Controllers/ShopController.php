@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\Order;
 use Illuminate\Http\Request;
 use DB;
 
@@ -33,7 +34,17 @@ class ShopController extends Controller
             $products = $products->orderBy('price')->paginate($pagination);
         } elseif (request()->sort == 'high_low') {
             $products = $products->orderBy('price', 'desc')->paginate($pagination);
-        } elseif (request()->sort == 'Top_Sellers') {
+        } 
+        elseif (request()->sort == 'Top_Sellers') {
+            $products = DB::table('products')
+            ->leftJoin('order_product','products.id','=','order_product.product_id')
+            ->selectRaw('products.*, COALESCE(sum(order_product.quantity),0) total')
+            ->groupBy('products.id')
+            ->orderBy('total','desc')
+            ->paginate($pagination);
+        }
+
+        elseif (request()->sort == 'Newest') {
             $products = $products->orderBy('id', 'desc')->paginate($pagination);
         }
         elseif (request()->sort == 'price_50_to_100') {
