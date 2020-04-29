@@ -89,9 +89,13 @@
 
  `php artisan serve`
 
- Visit `localhost:8000` in your browser
+ `localhost:8000`
 
- Visit `/admin/login` if you want to access the Voyager admin backend. Admin User/Password: `admin@admin.com/password`. Admin Web User/Password: `adminweb@adminweb.com/password`
+ `localhost:8000/admin/login`
+
+  Admin User/Password: `admin@admin.com/password`.
+  
+  Admin Web User/Password: `adminweb@adminweb.com/password`
 
 ## Stripe
 
