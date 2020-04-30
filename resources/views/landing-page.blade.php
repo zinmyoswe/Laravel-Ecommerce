@@ -133,15 +133,20 @@ h4{
       </div>
       <div class="carousel-item">
 
-        <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/HP_MH_1920x800-NJ-051019_tcm221-362745.jpg" alt="" width="100%" height="100%" fill="#777">
+        <img src="https://image.adidas.co.kr/upload/banner/bbf2598bfc7c4a2ba1f8aad25b494123_0429163854.jpg" alt="" width="100%" height="100%" fill="#777">
         <div class="container">
           <div class="carousel-caption text-left">
-            <h1>NITE JOGGER FOR ALL</h1>
-            <p>Light up the night in new Nite Jogger colorways. Photo by Cole Younger.</p>
-            <p><a class="btn btn-lg btn-light" href="{{route('shop.index')}}" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+            <h1 style="color: #000; font-weight: 600;">For Women,<br>Give Love & Thanks</h1>
+                
+            <p style="color: #000;">Light up the night in new Nite Jogger colorways. Photo by Cole Younger.</p>
+            <p><a class="btn btn-lg btn-dark" href="{{route('shop.index')}}" role="button">SHOP NOW <i class="fa fa-arrow-right"></i></a></p>
+            <p><a class="btn btn-lg btn-dark" href="{{route('shop.index')}}" role="button" style="margin-bottom: 120px">VIEW MEMBER BENEFITS <i class="fa fa-arrow-right"></i></a></p>
+        
           </div>
         </div>
       </div>
+
+
       <div class="carousel-item">
         <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/training-aSMC-ss20-mh-earthday-image2-d_tcm221-485018.jpg" alt="" width="100%" height="100%" fill="#777">
 
