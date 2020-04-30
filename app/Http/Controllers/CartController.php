@@ -6,6 +6,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Validator;
+use DB;
 
 class CartController extends Controller
 {
@@ -17,9 +18,13 @@ class CartController extends Controller
     public function index()
     {
         $mightAlsoLike = Product::mightAlsoLike()->get();
+        $top_pick = DB::table('products')->orderBy('id','DESC')->paginate(4);
+        $top_pick2 = DB::table('products')->orderBy('id','ASC')->paginate(4);
 
         return view('cart')->with([
             'mightAlsoLike' => $mightAlsoLike,
+            'top_pick' => $top_pick,
+            'top_pick2' => $top_pick2,
             'discount' => getNumbers()->get('discount'),
             'newSubtotal' => getNumbers()->get('newSubtotal'),
             'newTax' => getNumbers()->get('newTax'),

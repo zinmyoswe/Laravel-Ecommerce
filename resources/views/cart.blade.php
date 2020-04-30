@@ -14,6 +14,18 @@
     margin-top: 0em;
 }
 
+.btn-link{
+    color: black;
+    text-decoration: underline;
+
+}
+
+.btn-link:hover{
+    color: black;
+    text-decoration: underline;
+
+}
+
  /*text-transform: uppercase;*/
 </style>
 <br>
@@ -150,6 +162,11 @@
                         <span class="cart-totals-total">{{ $newTotal }}</span>
                     </div> --}}
          {{--    -------------- Coupon code end ----------------------- --}}
+
+            {{-- Bestseller code here --}}
+            @include('top-pick-for-u');
+
+            {{-- ======================= end of bestseller ==================== --}}
 
            
 
@@ -289,7 +306,25 @@
             <p><a href="" style="color: #000;">Shipping</a></p>
             <p><a href="" style="color: #000;">Returns & Exchanges</a></p>
             <p><a href="" style="color: #000;">Contact Us</a></p>
-            </div>
+    </div>
+
+    <div class="cart_sidebar2">
+        <h4>ACCEPTED PAYMENT METHODS</h4>
+        <img src="https://www.adidas.com/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw88ec105e/us_payment_methods.png" width="300px">
+
+        <p> <div class="cart-fontstyle">FREE SHIPPING, NO MINIMUM.
+</div>
+<a href="" style="color: #000;">Learn More</a></p>
+
+<p> <div class="cart-fontstyle">SECURE CHECKOUT</div>
+Pay safely with SSL technology.</p>
+
+<p> <div class="cart-fontstyle">FREE RETURNS*
+</div>
+Within 30 days<br>
+<a href="" style="color: #000;">read more</a></p>
+        </div>
+
         </div> {{-- col-lg-3 col-sm-6 col-xs-12 end --}}
     </div>{{--  row end --}}
 
@@ -348,22 +383,7 @@
 
     </div> {{-- col-lg-9 end --}}
 <div class="col-lg-3">
-        <div class="cart_sidebar2">
-        <h4>ACCEPTED PAYMENT METHODS</h4>
-        <img src="https://www.adidas.com/on/demandware.static/-/Sites-adidas-US-Library/en_US/dw88ec105e/us_payment_methods.png" width="300px">
-
-        <p> <div class="cart-fontstyle">FREE SHIPPING, NO MINIMUM.
-</div>
-<a href="" style="color: #000;">Learn More</a></p>
-
-<p> <div class="cart-fontstyle">SECURE CHECKOUT</div>
-Pay safely with SSL technology.</p>
-
-<p> <div class="cart-fontstyle">FREE RETURNS*
-</div>
-Within 30 days<br>
-<a href="" style="color: #000;">read more</a></p>
-        </div>
+   
     </div>
 </div> {{-- row end --}}
 
