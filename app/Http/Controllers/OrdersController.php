@@ -16,7 +16,7 @@ class OrdersController extends Controller
     {
         // $orders = auth()->user()->orders; // n + 1 issues
 
-        $orders = auth()->user()->orders()->with('products')->get(); // fix n + 1 issues
+        $orders = auth()->user()->orders()->with('products')->orderby('id','desc')->get(); // fix n + 1 issues
 
         return view('my-orders')->with('orders', $orders);
     }

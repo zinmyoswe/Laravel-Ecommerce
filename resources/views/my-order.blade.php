@@ -7,14 +7,48 @@
 @endsection
 
 @section('content')
+<style type="text/css">
+     ul li{
+        list-style: none;
+    }
 
-    @component('components.breadcrumbs')
-        <a href="/">Home</a>
-        <i class="fa fa-chevron-right breadcrumb-separator"></i>
-        <span>My Order</span>
-    @endcomponent
+    a{
+        color: black;
+    }
+    a:hover{
+        color: black;
+    }
+
+    .profile_sa {
+    background-color: transparent;
+    color: #000;
+    cursor: pointer;
+    
+    padding-left: 1px;
+    padding-right: 1px;
+    text-decoration: underline;
+    transition: color .1s cubic-bezier(.3,0,.45,1),background-color .1s cubic-bezier(.3,0,.45,1);
+    margin-top: 10px;
+    
+}
+</style>
+
+        <br><br>
+   
 
     <div class="container">
+
+        <a href="/">Home</a>
+         / 
+        <span>My Order</span>
+
+        <h2>ORDER DETAIL INFORMATION</h2>
+
+        <div class="row">
+
+            <div class="col-lg-9">
+
+
         @if (session()->has('success_message'))
             <div class="alert alert-success">
                 {{ session()->get('success_message') }}
@@ -30,44 +64,31 @@
                 </ul>
             </div>
         @endif
-    </div>
 
-    <div class="products-section my-orders container">
-        <div class="sidebar">
 
-            <ul>
-              <li><a href="{{ route('users.edit') }}">My Profile</a></li>
-              <li class="active"><a href="{{ route('orders.index') }}">My Orders</a></li>
-            </ul>
-        </div> <!-- end sidebar -->
-        <div class="my-profile">
-            <div class="products-header">
-                <h1 class="stylish-heading">Order ID: {{ $order->id }}</h1>
-            </div>
+        
+    
 
-            <div>
-                <div class="order-container">
-                    <div class="order-header">
-                        <div class="order-header-items">
-                            <div>
-                                <div class="uppercase font-bold">Order Placed</div>
-                                <div>{{ presentDate($order->created_at) }}</div>
-                            </div>
-                            <div>
-                                <div class="uppercase font-bold">Order ID</div>
-                                <div>{{ $order->id }}</div>
-                            </div><div>
-                                <div class="uppercase font-bold">Total</div>
-                                <div>{{ $order->billing_total }}</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="order-header-items">
-                                <div><a href="#">Invoice</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-products">
+    
+
+     
+   
+           
+                
+           
+
+        
+
+
+               
+
+                    <p>Order Placed :   {{ presentDate($order->created_at) }}</p>
+                    <p>Order ID     :   {{ $order->id }}</p>
+                    <p>TOTAL        :   ${{ $order->billing_total }}</p>
+                    
+                    
+
+               
                         <table class="table" style="width:50%">
                             <tbody>
                                 <tr>
@@ -84,7 +105,7 @@
                                 </tr>
                                 <tr>
                                     <td>Subtotal</td>
-                                    <td>{{ $order->billing_subtotal }}</td>
+                                    <td>${{ $order->billing_subtotal }}</td>
                                 </tr>
                                 <tr>
                                     <td>Tax</td>
@@ -92,44 +113,67 @@
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td>{{ $order->billing_total }}</td>
+                                    <td>${{ $order->billing_total }}</td>
                                 </tr>
                             </tbody>
                         </table>
 
-                    </div>
-                </div> <!-- end order-container -->
+              
 
-                <div class="order-container">
-                    <div class="order-header">
-                        <div class="order-header-items">
-                            <div>
-                                Order Items
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="order-products">
+                
+                 
+                        <h4 style="font-weight: 600; font-size: 22px;">ORDER DETAILS</h4>
                         @foreach ($products as $product)
-                            <div class="order-product-item">
-                                <div><img src="{{ asset($product->image) }}" alt="Product Image"></div>
-                                <div>
-                                    <div>
-                                        <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
-                                    </div>
-                                    <div>{{ $product->price }}</div>
-                                    <div>Quantity: {{ $product->pivot->quantity }}</div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <img src="{{ productImage($product->image) }}" alt="item" class="img_cartpage">
                                 </div>
-                            </div>
+                                <div class="col-lg-7">
+                                  <a href="{{ route('shop.show', $product->slug) }}" style="color: black; font-size: 18px; font-weight: 600">{{ $product->name }}</a>
+
+                                    <p>${{ $product->price }}</p>
+                                    
+                                <p class="cart_p">COLOR: Black <br>
+                                   SIZE: 9.5  / Quantity: {{ $product->pivot->quantity }}  </p>
+                                </div>
+                                </div>
+                        </div>
                         @endforeach
 
-                    </div>
-                </div> <!-- end order-container -->
-            </div>
+                        <br><br>
+                        <a href="#" class="btn btn-dark pull-right">Invoice</a>
 
-            <div class="spacer"></div>
+                   </div> {{-- col-lg-9 end --}}
+            
+
+            <div class="col-lg-3">
+
+                <h5>My Account</h5>
+                
+                <p><a href="{{ route('users.edit') }}" class="profile_sa">
+                Personal Information</a></p>
+                <p><a href="{{ route('orders.index') }}" class="profile_sa">Order History</a></p>
+                <p><a href="" class="profile_sa">Address Book</a></p>
+                <p><a href="" class="profile_sa">Wish List</a></p>
+                
+            
+            
+            <hr>
+
+            <h5>NEED HELP?</h5>
+
+            <p><a href="" class="profile_sa">Ordering & Payments</a></p>
+            <p><a href="" class="profile_sa">Delivery</a></p>
+            <p><a href="" class="profile_sa">Returns & Refunds</a></p>
+            <p><a href="" class="profile_sa">Account & Newsletter</a></p>
+            <p><a href="" class="profile_sa">Company information</a></p>
+            </div>
         </div>
     </div>
+
+    <div style="height: 190px;"></div>
+        
 
 @endsection
 
