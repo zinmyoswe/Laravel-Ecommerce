@@ -26,7 +26,7 @@ Sign me up for the adidas emails, featuring exclusive offers, latest product inf
       <div class="col-6 col-md">
         <h5>Features</h5>
         <ul class="list-unstyled text-small">
-          <li><a  href="">Admin Panel</a></li>
+          <li><a  href="/admin/login/">Admin Panel</a></li>
           <li><a  href="#">Random feature</a></li>
           <li><a  href="#">Team feature</a></li>
           <li><a href="#">Stuff for developers</a></li>
