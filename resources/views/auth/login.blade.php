@@ -123,7 +123,7 @@
 
                 <a href="{{ route('guestCheckout.index') }}" class="btn btn-outline-dark">Continue as Guest </a><br><br>
 
-                <div class="btn btn-outline-dark">FACEBOOK <img src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512" width="25" height="25"></div><br><br>
+                <div class="btn btn-outline-dark">FACEBOOK <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" width="25" height="25"></div><br><br>
 
                 <div class="btn btn-outline-dark">GOOGLE <img src="https://img.icons8.com/color/480/google-logo.png" width="25" height="25"></div>
 
@@ -151,7 +151,7 @@
 
                 <br><br>
 
-                <img src="https://www.adidas.com/glass/react/850e7b4/assets/img/CC2.0_my_account_register.jpg" width="450px" height="200px">
+                <img src="https://underarmour.scene7.com/is/image/Underarmour/SS24_Q1_SlipSpeed_Nubuck_Site_2_1?qlt=75&fmt=jpg&wid=1440&op_sharpen=1&" width="450px" height="200px">
             
                 
             </div>
