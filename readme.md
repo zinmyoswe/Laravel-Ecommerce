@@ -87,6 +87,8 @@
 
  `php artisan db:seed`
 
+ `php artisan storage:link`
+
  `php artisan serve`
 
  `localhost:8000`
